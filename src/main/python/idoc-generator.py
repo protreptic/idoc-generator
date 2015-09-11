@@ -24,8 +24,7 @@ def generate_idoc(idoc_num):
     for sscc_tag in root.iter('SSCC'):
         sscc_tag.text = str(uuid.uuid4().int)[0:18]
 
-    tree.write(output_directory + '/idoc' + str(idoc_num) + '.xml')
+    tree.write(output_directory + str('/idoc-' + str(uuid.uuid4()) + '.xml').upper())
 
 for idoc_number in range(1, 101):
     generate_idoc(idoc_number)
-
